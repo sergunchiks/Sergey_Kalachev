@@ -1,0 +1,7 @@
+C:\Users\Asus\Desktop\Repository\ConsolePrincessGame\ConsolePrincessGame\bin\Debug\ConsolePrincessGame.exe.config
+C:\Users\Asus\Desktop\Repository\ConsolePrincessGame\ConsolePrincessGame\bin\Debug\ConsolePrincessGame.exe
+C:\Users\Asus\Desktop\Repository\ConsolePrincessGame\ConsolePrincessGame\bin\Debug\ConsolePrincessGame.pdb
+C:\Users\Asus\Desktop\Repository\ConsolePrincessGame\ConsolePrincessGame\obj\Debug\ConsolePrincessGame.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\Repository\ConsolePrincessGame\ConsolePrincessGame\obj\Debug\ConsolePrincessGame.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\Repository\ConsolePrincessGame\ConsolePrincessGame\obj\Debug\ConsolePrincessGame.exe
+C:\Users\Asus\Desktop\Repository\ConsolePrincessGame\ConsolePrincessGame\obj\Debug\ConsolePrincessGame.pdb
