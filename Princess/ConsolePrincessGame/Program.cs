@@ -38,7 +38,7 @@ namespace ConsolePrincessGame
 
 
                 Console.WriteLine("Princess game");
-                Console.WriteLine("Press any arrow keys to start");
+                Console.WriteLine("Press any arrow keys to start(UpArrow, DownArrow, LeftArrow, RightArrow)");
 
 
                 do

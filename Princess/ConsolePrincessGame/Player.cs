@@ -16,8 +16,8 @@ namespace ConsolePrincessGame
         public void PlayerMovement(ref int x, ref int y)
         {
             
-            ConsoleKey consolekey = Console.ReadKey().Key;
-            switch (consolekey)
+            ConsoleKey pressedkey = Console.ReadKey().Key;
+            switch (pressedkey)
             {
                
                 case ConsoleKey.DownArrow:
