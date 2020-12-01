@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsolePrincessGame 
 {
-    class Player
+   public class Player
     {
         private int playerhealth;
         private string playeravatar;
