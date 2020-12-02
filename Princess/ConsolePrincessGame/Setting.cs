@@ -27,7 +27,7 @@ namespace ConsolePrincessGame
 
         public const string HorizontalFieldBorder = "_";
         public const string VerticalFieldBorder = "|";
-        public const string fieldCell = "♠";
+        public const string fieldCell = "?";
 
         //Player
         public static int PlayerHealth { get; set; } = 10;
