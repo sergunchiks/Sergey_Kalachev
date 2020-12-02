@@ -13,98 +13,76 @@ namespace ConsolePrincessGame
 
         static void Main(string[] args)
         {
-            int x = 1;
-            int y = 1;
-            string[,] field = new string[12, 12];
-            string[,] mines = new string[12, 12];
-            int location = 0;
-            bool position; 
-            bool determination;
-
+            GameField gamefield = new GameField();
 
             Game game = new Game();
-            Player player = new Player();
-            Random random = new Random();
-            
 
+            Player player = new Player();
+
+            BombLogic bomb = new BombLogic();
             do
             {
                 Console.Clear();
 
-                for (int i = 1; i < 11; i++)
-                {
-                    mines[random.Next(1, 11), random.Next(1, 11)] = " P";
-                }
+                game.GameReset();
 
+                gamefield.FieldRendering();
 
-                Console.WriteLine("Princess game");
-                Console.WriteLine("Press any arrow keys to start(UpArrow, DownArrow, LeftArrow, RightArrow)");
+                bomb.BombsRendering();
 
-
+                Console.WriteLine("Press keyboard to start(W,A,S,D, Left Arrow, Right Arrow, Up Arrow, Down Arrow, Num8, Num4, Num6, Num2)");
                 do
                 {
-                    position = true;
-                    determination = true;
-
-                    player.PlayerMovement(ref x, ref y);
-
-
+                    player.PlayerMovement();
                     Console.Clear();
 
+                    gamefield.Field[Setting.Height, Setting.Length] = Setting.PlayerIcon;
 
-                    int rows = field.GetUpperBound(0) + 1;
-                    int pillars = field.Length / rows;
-
-
-                    for (int i = 1; i < rows; i++)
+                    if (Setting.PlayerIcon == bomb.Bombs[Setting.Height, Setting.Length])
                     {
-                        for (int j = 1; j < pillars; j++)
+                        gamefield.Field[Setting.Height, Setting.Length] = Setting.BombIcon;
+                    }
+
+                    gamefield.Field[Setting.PrincessLengthPosition, Setting.PrinsessHeightPosition] = Setting.PrinsessIcon;
+
+                    Console.WriteLine("Console Princess game");
+                    Console.WriteLine($"Your Health {Setting.PlayerHealth}");
+
+                    for (Setting.FirstCounter = 0; Setting.FirstCounter < Setting.MaximumFieldRows; Setting.FirstCounter++)
+                    {
+                        for (Setting.SecondCounter = 0; Setting.SecondCounter < Setting.MaximumFieldPillars; Setting.SecondCounter++)
                         {
-                            field[i, j] = "| |";
+                            Console.Write($"{  gamefield.Field[Setting.FirstCounter, Setting.SecondCounter] }\t");
                         }
-                    }   
-
-
-                        field[y, x] = player.PlayerAvatar;
-                        field[11, 11] = " P";
-
-                        Console.WriteLine($"Your HP {player.PlayerHealth}");
-
-                        for (int f = 0; f < rows; f++)
-                        {
-                            for (int j = 0; j < pillars; j++)
-                            {
-                                Console.Write($"{field[f, j] }\t");
-                            }
-
-                            Console.WriteLine();
-                            Console.WriteLine();
-                        }
-
-                        if (field[y, x] == field[11, 11])
-                        {
-                            game.GameWin(ref location, ref position, ref determination, ref x, ref y);
-                        }
-
-                        else if (field[y, x] == mines[x, y])
-                        {
-                            player.PlayerHealth -= random.Next(1, 10);
-
-                            if (player.PlayerHealth <= 0)
-                            {
-                                game.GameLoss(ref location, ref position, ref determination, ref x, ref y);
-                            }
-                        }
-
-                        field[y, x] = "";
+                        Console.WriteLine();
+                        Console.WriteLine();
+                    }
                     
-                } while (position);
+                    if (gamefield.Field[Setting.Height, Setting.Length] == gamefield.Field[Setting.PrincessLengthPosition, Setting.PrinsessHeightPosition])
+                    {
+                        Console.WriteLine("Congratulations!!! You saved the Princess!!! ");
 
+                        game.GameLogic();
+                    }
+                    else if (Setting.PlayerIcon == bomb.Bombs[Setting.Height, Setting.Length])
+                    {
+                        bomb.Bombs[Setting.Height, Setting.Length] = Setting.BombIcon;
+                        Setting.PlayerHealth -= bomb.BombDamage;
 
+                        if (Setting.PlayerHealth <= 0)
+                        {
+                            Console.WriteLine("GAME OVER");
 
+                            game.GameLogic();
+                        }
+                    }
+                    if (gamefield.Field[Setting.Height, Setting.Length] != Setting.BombIcon)
+                    {
+                        gamefield.Field[Setting.Height, Setting.Length] = Setting.fieldCell;
+                    }
+                } while (Setting.NewGame);
 
-
-            } while (determination);
+            } while (Setting.GameOver);
         }
     }
 }

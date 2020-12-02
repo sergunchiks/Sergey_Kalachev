@@ -8,56 +8,64 @@ namespace ConsolePrincessGame
 {
    public class Player
     {
-        private int playerhealth;
-        private string playeravatar;
-        public int PlayerHealth { get; set; } = 10;
-        public string PlayerAvatar { get; set; } = "|P|";
+        
        
-        public void PlayerMovement(ref int x, ref int y)
+        public void PlayerMovement()
         {
             
             ConsoleKey pressedkey = Console.ReadKey().Key;
             switch (pressedkey)
             {
-               
+
+                case ConsoleKey.NumPad2:
                 case ConsoleKey.DownArrow:
-                    if (y == 11)
+                case ConsoleKey.S:
+                    if (Setting.Height == Setting.MaximumGamePillars)
                     {
                         break;
                     }
                     else
                     {
-                        y += 1;
+                        Setting.Height += Setting.PlayerStep;
                     }
                     break;
+
+                case ConsoleKey.NumPad6:
                 case ConsoleKey.RightArrow:
-                    if (x == 11)
+                case ConsoleKey.D:
+                    if (Setting.Length == Setting.MaximumGameRows)
                     {
                         break;
                     }
                     else
                     {
-                        x += 1;
+                        Setting.Length += Setting.PlayerStep;
                     }
                     break;
+
+                case ConsoleKey.NumPad8:
                 case ConsoleKey.UpArrow:
-                    if (y == 1)
+                case ConsoleKey.W:
+                    if (Setting.Height == Setting.MinimumGamePillars)
                     {
                         break;
                     }
                     else
                     {
-                        y -= 1;
+                        Setting.Height -= Setting.PlayerStep;
                     }
                     break;
+
+                case ConsoleKey.NumPad4:
                 case ConsoleKey.LeftArrow:
-                    if (x == 1)
+                case ConsoleKey.A:
+                    if (Setting.Length == Setting.MinimumGameRows)
                     {
                         break;
                     }
                     else
                     {
-                        x -= 1;
+                        Setting.Length -= Setting.PlayerStep;
                     }
                     break;
             }
