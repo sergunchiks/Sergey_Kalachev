@@ -8,32 +8,29 @@ using ConsolePrincessGame;
 namespace ConsolePrincessGame
 {
 
-    class Program 
+    public class Program 
     {
 
         static void Main(string[] args)
         {
             GameField gamefield = new GameField();
-
             Game game = new Game();
-
             Player player = new Player();
+            Bomb bomb = new Bomb();
 
-            BombLogic bomb = new BombLogic();
             do
             {
                 Console.Clear();
-
-                game.GameReset();
-
-                gamefield.FieldRendering();
-
-                bomb.BombsRendering();
+                game.ResetGame();
+                gamefield.RenderField();
+                bomb.RederBomb();
 
                 Console.WriteLine("Press keyboard to start(W,A,S,D, Left Arrow, Right Arrow, Up Arrow, Down Arrow, Num8, Num4, Num6, Num2)");
+
                 do
                 {
-                    player.PlayerMovement();
+                    player.LetsMove();
+
                     Console.Clear();
 
                     gamefield.Field[Setting.Height, Setting.Length] = Setting.PlayerIcon;
@@ -62,7 +59,7 @@ namespace ConsolePrincessGame
                     {
                         Console.WriteLine("Congratulations!!! You saved the Princess!!! ");
 
-                        game.GameLogic();
+                        game.LetsPlay();
                     }
                     else if (Setting.PlayerIcon == bomb.Bombs[Setting.Height, Setting.Length])
                     {
@@ -73,7 +70,7 @@ namespace ConsolePrincessGame
                         {
                             Console.WriteLine("GAME OVER");
 
-                            game.GameLogic();
+                            game.LetsPlay();
                         }
                     }
                     if (gamefield.Field[Setting.Height, Setting.Length] != Setting.BombIcon)

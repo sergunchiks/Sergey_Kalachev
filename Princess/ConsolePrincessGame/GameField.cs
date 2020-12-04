@@ -10,8 +10,7 @@ namespace ConsolePrincessGame
     {
         public string[,] Field { get; set; }
 
-       
-        public void FieldRendering()
+        public void RenderField()
         {
             Field = new string[Setting.MaximumFieldRows, Setting.MaximumFieldPillars];
 

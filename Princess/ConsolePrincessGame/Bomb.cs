@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsolePrincessGame
 {
-    public class BombLogic
+    public class Bomb
 
     {
         public int BombDamage { get; set; }
@@ -16,34 +16,33 @@ namespace ConsolePrincessGame
         public int BombPositionOy { get; set; }
 
         Random random = new Random();
-
         
-            
-        public void BombsRendering()
+        public void RederBomb()
         {
-                BombDamage = random.Next(Setting.MinimumBombDamage, Setting.MaximumBombDamage);
-                Bombs = new string[Setting.MaximumGameRows, Setting.MaximumGamePillars];
-            
-            {
-                BombPositionOx = random.Next(Setting.MinimumGameRows, Setting.MaximumGameRows);
+            BombDamage = random.Next(Setting.MinimumBombDamage, Setting.MaximumBombDamage);
 
-                BombPositionOy = random.Next(Setting.MinimumGamePillars, Setting.MaximumGamePillars);
+            BombPositionOx = random.Next(Setting.MinimumGameRows, Setting.MaximumGameRows);
+            BombPositionOy = random.Next(Setting.MinimumGamePillars, Setting.MaximumGamePillars);
 
-                if (Bombs[BombPositionOx, BombPositionOy] == null)
-                {
-                    if (BombPositionOx != Setting.MinimumGameRows && BombPositionOy != Setting.MinimumGamePillars)
-                    {
-                        if (BombPositionOx != Setting.MaximumGameRows && BombPositionOy != Setting.MaximumGamePillars)
-                        {
-                            Bombs[BombPositionOx, BombPositionOy] = Setting.PlayerIcon;
-                        }
-                    }
-                }
-                else
-                {
-                    Setting.NumberOfBombs++;
-                }
-            }
+            Bombs = new string[Setting.MaximumGameRows, Setting.MaximumGamePillars];                      
+
+             if (Bombs[BombPositionOx, BombPositionOy] == null)
+             {
+
+              if (BombPositionOx != Setting.MinimumGameRows && BombPositionOy != Setting.MinimumGamePillars)
+              {
+
+               if (BombPositionOx != Setting.MaximumGameRows && BombPositionOy != Setting.MaximumGamePillars)
+               {
+                  Bombs[BombPositionOx, BombPositionOy] = Setting.PlayerIcon;
+               }
+              }
+             }
+             else
+             {
+                 Setting.NumberOfBombs++;
+             }
+           
         }
     }
 }

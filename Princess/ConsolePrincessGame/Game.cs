@@ -4,11 +4,10 @@ namespace ConsolePrincessGame
 {
     public class Game
     {
-        public void GameLogic()
+        public void LetsPlay()
         {
-            
-
            Console.Clear();
+
             do
             {
                 Console.WriteLine("To start a new game, please press Enter key, and Backspace key to end the game ");
@@ -35,7 +34,7 @@ namespace ConsolePrincessGame
             } while (Setting.IncorrectKey);
         }
         
-        public void GameReset()
+        public void ResetGame()
         {
             Setting.Height = Setting.MinimumGameRows;
             Setting.Length = Setting.MinimumGamePillars;
