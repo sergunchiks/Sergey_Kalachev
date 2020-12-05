@@ -18,13 +18,10 @@ namespace ConsolePrincessGame
         //Field
         public const int MaximumFieldPillars = 12;
         public const int MaximumFieldRows = 12;
-
         public const int MaximumGamePillars = 11;
         public const int MaximumGameRows = 11;
-
         public const int MinimumGamePillars = 1;
         public const int MinimumGameRows = 1;
-
         public const string HorizontalFieldBorder = "_";
         public const string VerticalFieldBorder = "|";
         public const string fieldCell = "?";

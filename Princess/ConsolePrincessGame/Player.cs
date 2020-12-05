@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 namespace ConsolePrincessGame 
 {
    public class Player
-    {
-        
-       
+    {   
         public void LetsMove()
-        {
-            
+        {            
             ConsoleKey pressedkey = Console.ReadKey().Key;
 
             switch (pressedkey)

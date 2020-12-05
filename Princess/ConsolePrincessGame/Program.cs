@@ -7,10 +7,8 @@ using ConsolePrincessGame;
 
 namespace ConsolePrincessGame
 {
-
     public class Program 
     {
-
         static void Main(string[] args)
         {
             GameField gamefield = new GameField();
@@ -21,6 +19,7 @@ namespace ConsolePrincessGame
             do
             {
                 Console.Clear();
+
                 game.ResetGame();
                 gamefield.RenderField();
                 bomb.RederBomb();

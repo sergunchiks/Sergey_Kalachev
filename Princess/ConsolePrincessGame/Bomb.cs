@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 namespace ConsolePrincessGame
 {
     public class Bomb
-
     {
         public int BombDamage { get; set; }
         public string[,] Bombs { get; set; }
-
         public int BombPositionOx { get; set; }
         public int BombPositionOy { get; set; }
 
