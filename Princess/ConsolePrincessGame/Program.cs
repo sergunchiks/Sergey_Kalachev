@@ -22,13 +22,13 @@ namespace ConsolePrincessGame
 
                 game.ResetGame();
                 gamefield.RenderField();
-                bomb.RederBomb();
+                bomb.RenderBombs();
 
                 Console.WriteLine("Press keyboard to start(W,A,S,D, Left Arrow, Right Arrow, Up Arrow, Down Arrow, Num8, Num4, Num6, Num2)");
 
                 do
                 {
-                    player.LetsMove();
+                    player.ProvidesMovement();
 
                     Console.Clear();
 
@@ -58,7 +58,7 @@ namespace ConsolePrincessGame
                     {
                         Console.WriteLine("Congratulations!!! You saved the Princess!!! ");
 
-                        game.LetsPlay();
+                        game.GiveGame();
                     }
                     else if (Setting.PlayerIcon == bomb.Bombs[Setting.Height, Setting.Length])
                     {
@@ -69,7 +69,7 @@ namespace ConsolePrincessGame
                         {
                             Console.WriteLine("GAME OVER");
 
-                            game.LetsPlay();
+                            game.GiveGame();
                         }
                     }
                     if (gamefield.Field[Setting.Height, Setting.Length] != Setting.BombIcon)

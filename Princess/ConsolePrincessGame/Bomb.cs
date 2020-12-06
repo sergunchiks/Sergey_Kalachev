@@ -15,7 +15,7 @@ namespace ConsolePrincessGame
 
         Random random = new Random();
         
-        public void RederBomb()
+        public void RenderBombs()
         {
             BombDamage = random.Next(Setting.MinimumBombDamage, Setting.MaximumBombDamage);
 
@@ -39,8 +39,7 @@ namespace ConsolePrincessGame
              else
              {
                  Setting.NumberOfBombs++;
-             }
-           
+             }           
         }
     }
 }

@@ -8,7 +8,7 @@ namespace ConsolePrincessGame
 {
    public class Player
     {   
-        public void LetsMove()
+        public void ProvidesMovement()
         {            
             ConsoleKey pressedkey = Console.ReadKey().Key;
 
@@ -72,9 +72,5 @@ namespace ConsolePrincessGame
                     break;
             }
         }
-
-        
-        
-
     }
 }

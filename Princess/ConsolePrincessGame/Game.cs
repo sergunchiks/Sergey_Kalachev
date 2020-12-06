@@ -4,7 +4,7 @@ namespace ConsolePrincessGame
 {
     public class Game
     {
-        public void LetsPlay()
+        public void GiveGame()
         {
            Console.Clear();
 
@@ -42,10 +42,6 @@ namespace ConsolePrincessGame
             Setting.NewGame = true;
             Setting.GameOver = false;
         }
-
-
-
-
     }
 }
 

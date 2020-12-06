@@ -45,10 +45,5 @@ namespace ConsolePrincessGame
         public const string PrinsessIcon = "P";
         public const int PrincessLengthPosition = 10;
         public const int PrinsessHeightPosition = 10;
-        
-
-        
-
-    }
-        
+    }        
 }

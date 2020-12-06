@@ -35,7 +35,6 @@ namespace ConsolePrincessGame
                     Field[Setting.FirstCounter, Setting.SecondCounter] = Setting.fieldCell;
                 }
             }
-        }
-        
+        }        
     }
 }
