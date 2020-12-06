@@ -63,6 +63,7 @@ namespace ConsolePrincessGame
                     else if (Setting.PlayerIcon == bomb.Bombs[Setting.Height, Setting.Length])
                     {
                         bomb.Bombs[Setting.Height, Setting.Length] = Setting.BombIcon;
+
                         Setting.PlayerHealth -= bomb.BombDamage;
 
                         if (Setting.PlayerHealth <= 0)

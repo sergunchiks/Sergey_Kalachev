@@ -23,7 +23,6 @@ namespace ConsolePrincessGame
             for (Setting.FirstCounter = 1; Setting.FirstCounter < Setting.MaximumFieldPillars - 1; Setting.FirstCounter++)
             {
                 Field[Setting.FirstCounter, 0] = Setting.VerticalFieldBorder;
-
                 Field[Setting.FirstCounter, Setting.MaximumFieldPillars - 1] = Setting.VerticalFieldBorder;
             }
 
